@@ -134,7 +134,7 @@ namespace ProcessWatcher
                         flag = false;
                 }
                 if (flag)
-                    SetThreadExecutionState(ExecutionState.SystemRequired);
+                    SetThreadExecutionState(Required);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace ProcessWatcher
                 {
                     if (!p.HasExited)
                     {
-                        SetThreadExecutionState(ExecutionState.SystemRequired);
+                        SetThreadExecutionState(Required);
                         break;
                     }
                 }
@@ -158,9 +158,33 @@ namespace ProcessWatcher
             this.onlywindow = !this.onlywindow;
         }
 
+
         private void settingsToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
         {
             this.listOnlyWindowToolStripMenuItem.Checked = this.onlywindow;
+            this.keepScreenToolStripMenuItem.Checked = this.keepscreen;
+
+        }
+
+        bool keepscreen = false;
+        private void keepScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.keepscreen = !this.keepscreen;
+        }
+
+        ExecutionState Required
+        {
+            get
+            {
+                if (this.keepscreen)
+                {
+                    return ExecutionState.DisplayRequired;
+                }
+                else
+                {
+                    return ExecutionState.SystemRequired;
+                }
+            }
         }
 
     }

@@ -43,6 +43,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.listOnlyWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.keepScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +106,8 @@
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.watchTypeToolStripMenuItem,
             this.intervalsToolStripMenuItem,
-            this.listOnlyWindowToolStripMenuItem});
+            this.listOnlyWindowToolStripMenuItem,
+            this.keepScreenToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
             this.settingsToolStripMenuItem.Text = "&Settings";
@@ -164,6 +166,13 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // keepScreenToolStripMenuItem
+            // 
+            this.keepScreenToolStripMenuItem.Name = "keepScreenToolStripMenuItem";
+            this.keepScreenToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.keepScreenToolStripMenuItem.Text = "Keep &Screen";
+            this.keepScreenToolStripMenuItem.Click += new System.EventHandler(this.keepScreenToolStripMenuItem_Click);
+            // 
             // ProcessListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -197,6 +206,7 @@
         private System.Windows.Forms.ToolStripMenuItem watchToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem listOnlyWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem keepScreenToolStripMenuItem;
 
     }
 }
